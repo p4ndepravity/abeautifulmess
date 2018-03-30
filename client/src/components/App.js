@@ -6,11 +6,10 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 // import Dashboard from "./Dashboard";
-// import Blog from "./blog/Blog";
+import Blog from "./blog/Blog";
 // import Post from "./blog/Post";
 // import PostNew from "./blog/PostNew";
 const Dashboard = () => <h2>Dashboard</h2>;
-const Blog = () => <h2>Blog</h2>;
 const PostNew = () => <h2>PostNew</h2>;
 
 class App extends Component {
@@ -20,7 +19,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <BrowserRouter>
           <div>
             <Header />

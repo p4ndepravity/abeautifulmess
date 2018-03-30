@@ -1,11 +1,12 @@
 import React from "react";
+import Intro from "./Intro";
 
 const Landing = () => {
-  return (
-    <div>
-      <h1>A Beautiful Mess 101</h1>
-      Find your Ahh moment
-    </div>
+  return Intro(
+    { className: "glyphicon glyphicon-ice-lolly-tasted" },
+    "about",
+    "MY STORY",
+    "Find your Ahh moment..."
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { NavItem, Navbar, Nav } from "react-bootstrap";
 
 class Header extends Component {
   renderUserLinks() {
@@ -10,48 +9,57 @@ class Header extends Component {
         return;
       case false:
         return (
-          <NavItem eventKey={1} href="/auth/google">
-            Login With Google
-          </NavItem>
+          <li>
+            <a href="/auth/google">Login With Google</a>
+          </li>
         );
       default:
         return (
-          <NavItem eventKey={1} href="/api/logout">
-            Logout
-          </NavItem>
+          <li>
+            <a href="/api/logout">LOGOUT</a>
+          </li>
         );
     }
   }
 
   render() {
     return (
-      <Navbar collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to={this.props.auth ? "/dashboard" : "/"}>
+      <nav
+        className="text-center"
+        style={{
+          backgroundColor: "#f4f5fc",
+          padding: "30px 0"
+        }}
+      >
+        <div>
+          <Link to={this.props.auth ? "/dashboard" : "/"}>
+            <div style={{ fontSize: "64px" }}>
               A Beautiful Mess 101
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#about">
-              About Me
-            </NavItem>
-            <NavItem eventKey={2} href="#work">
-              Services
-            </NavItem>
-            <NavItem eventKey={3} href="/blog">
-              Some Thoughts
-            </NavItem>
-            <NavItem eventKey={4} href="#contact">
-              Reach Out
-            </NavItem>
-          </Nav>
-          <Nav pullRight>{this.renderUserLinks()}</Nav>
-        </Navbar.Collapse>
-      </Navbar>
+            </div>
+          </Link>
+        </div>
+        <div>
+          <ul className="list-inline">
+            <li>
+              <a href="#about">ABOUT ME</a>
+            </li>
+            <li>.</li>
+            <li>
+              <a href="#work">SERVICES</a>
+            </li>
+            <li>.</li>
+            <li>
+              <Link to="/blog">SOME THOUGHTS</Link>
+            </li>
+            <li>.</li>
+            <li>
+              <a href="contact">REACH OUT</a>
+            </li>
+            <li>.</li>
+            {this.renderUserLinks()}
+          </ul>
+        </div>
+      </nav>
     );
   }
 }
