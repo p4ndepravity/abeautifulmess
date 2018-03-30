@@ -5,10 +5,13 @@ import * as actions from "../actions";
 
 import Header from "./Header";
 import Landing from "./Landing";
-import Dashboard from "./Dashboard";
-import Blog from "./blog/Blog";
-import Post from "./blog/Post";
-import PostNew from "./blog/PostNew";
+// import Dashboard from "./Dashboard";
+// import Blog from "./blog/Blog";
+// import Post from "./blog/Post";
+// import PostNew from "./blog/PostNew";
+const Dashboard = () => <h2>Dashboard</h2>;
+const Blog = () => <h2>Blog</h2>;
+const PostNew = () => <h2>PostNew</h2>;
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +26,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/posts" component={Blog} />
+            <Route exact path="/blog" component={Blog} />
             <Route path="/posts/new" component={PostNew} />
           </div>
         </BrowserRouter>
