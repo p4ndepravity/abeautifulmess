@@ -6,8 +6,9 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
-import Blog from "./Blog";
-import PostNew from "./PostNew";
+import Blog from "./blog/Blog";
+import Post from "./blog/Post";
+import PostNew from "./blog/PostNew";
 
 class App extends Component {
   componentDidMount() {
@@ -30,3 +31,5 @@ class App extends Component {
     );
   }
 }
+
+export default connect(null, actions)(App);
